@@ -1,0 +1,39 @@
+{% extends 'sports/base.html' %}
+{% block body %}
+  <div class="container">
+    <div class="row">
+      <div class="col-4-sm">
+      </div>
+      <div class="col-4-sm">
+        <img class="rounded-circle image" src="{{ article.image }}" alt="">
+        <h3 class="title">{{ article.title }}</h4>
+        <p class="article">{{ article.body | safe }}</p>
+        <br/><br/><br/>
+        <p>Leave comments below: </p>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="col-6">
+              {{ form.as_p }}
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <br/><br/><br/>
+      </div>
+      <div class="col-4-sm">
+        {% if comments %}
+          {% for comment in comments %}
+            {% if comment.article.id == article.id %}
+              <p>{{ comment.person }}</p>
+              <p>{{ comment.message }}</p>
+              <p>{{ comment.date }}</p>
+            {% endif %}
+          {% endfor %}
+          <p></p>
+        {% endif %}
+      </div>
+      <br/><br/><br/>
+    </div>
+  </div>
+{% endblock %}

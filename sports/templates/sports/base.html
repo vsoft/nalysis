@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %} Nalysis {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ranga|Slabo+27px" rel="stylesheet">
+    <style media="screen">
+      .nav
+      {
+        width: 100%;
+      }
+      .navbar-brand small
+      {
+        display:block;
+        font-size:9px;
+      }
+      .navbar-brand
+      {
+        font-size: 16px;
+      }
+      .split
+      {
+        position: relative;
+        left: 34%;
+        padding-top: 3%;
+      }
+      .left
+      {
+        left: 0;
+      }
+      .right
+      {
+        right: 0;
+      }
+      .header img
+      {
+        margin: 5px;
+      }
+      .title
+      {
+        font-family: 'Ranga', cursive;
+      }
+      .article
+      {
+        font-family: 'Slabo 27px', serif;
+      }
+      .image
+      {
+        width: 300px;
+        height: 300px;
+      }
+      .search
+      {
+        padding-left: 70%;
+      }
+      textarea
+      {
+        resize: none;
+      }
+      .dyn-height
+      {
+        width:100px;
+        height:93vh;
+        overflow-y:auto;
+      }
+      .invisible-scrollbar::-webkit-scrollbar
+      {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'sports:index' %}">Nialysis <small>Sports all day all the time</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'sports:nfl' %}">NFL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'sports:nba' %}">NBA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'sports:about' %}">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <form class="form-inline search-collapse">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </ul>
+      </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+  </body>
+
+</html>

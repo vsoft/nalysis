@@ -1,0 +1,14 @@
+{% extends 'sports/base.html' %}
+{% block body %}
+  <div class="container visible-scrollbar">
+    <div class="row ">
+      <div class="col-lg-6 dyn-height invisible-scrollbar">
+        <h3>NFL Latest</h3>
+        <a class="twitter-timeline invisible-scrollbar" href="https://twitter.com/NFL?ref_src=twsrc%5Etfw">Tweets by NFL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div class="col-lg-6 right split">
+        {% include 'sports/articlethumbnails.html' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

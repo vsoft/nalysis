@@ -1,0 +1,14 @@
+{% if all_articles %}
+  {% for article in all_articles %}
+    <div class="col-6-sm">
+      <div class="card card-group">
+        <div class="card-header">
+          <img class="img-thumbnail" style="width: 100px;" src="{{ article.image }}" alt="">
+        </div>
+        <div class="card-body">
+          <a class="badge badge-secondary" href="{% url 'sports:detail' article.id %}">{{ article.title }}</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
